@@ -1,23 +1,28 @@
 "use client";
 
 import { signIn, signOut, useSession } from "next-auth/react";
+import Login  from "../components/login-btn";
 
 export default function HomePage() {
   const { data: session } = useSession();
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen">
+    <main className="flex flex-col items-center justify-center min-h-screen bg-slate-900">
       {!session ? (
         <>
-          <p className="text-4xl">No has iniciado sesión</p>
-          <button className="text-3xl text-yellow-600 my-6" onClick={() => signIn("google")}>Iniciar con Google</button>
+        <div>
+          <h1 className='text-6xl text-white' >Welcome to Tasker</h1>
+          <p></p>
+        </div>
+          <p className="text-4xl text-white mb-10">You are not logged in</p>
+          <button className="outline-2 outline-offset-2 outline-yellow-500 p-3 rounded-lg text-2xl text-yellow-600  cursor-pointer" onClick={() => signIn("google")}>Sign in with Google</button>
 
-          <button className="text-3xl text-blue-600" onClick={() => signIn("github")}>Iniciar con GitHub</button>
+          <button className="outline-2 outline-offset-2 outline-cyan-500 p-3 rounded-lg text-2xl text-blue-500 my-9 cursor-pointer " onClick={() => signIn("github")}>Sign in with  GitHub</button>
         </>
       ) : (
         <>
-          <p>Hola {session.user?.name}</p>
-          <button onClick={() => signOut()}>Cerrar sesión</button>
+          <p className="text-white">Hi {session.user?.name}</p>
+          <button className="text-white" onClick={() => signOut()}>Log out</button>
         </>
       )}
     </main>
