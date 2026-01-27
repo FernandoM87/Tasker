@@ -11,13 +11,13 @@ export function LoginButton({ provider }: LoginButtonProps) {
   const config = {
     google: {
       icon: FaGoogle,
-      label: 'Continuar con Google',
-      bg: 'bg-white hover:bg-gray-50 text-gray-800 border border-gray-300'
+      label: 'Sign in with Google',
+      bg: 'text-red-400 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer my-6'
     },
     github: {
       icon: FaGithub,
-      label: 'Continuar con GitHub',
-      bg: 'bg-gray-800 hover:bg-gray-900 text-white'
+      label: 'Sign in with GitHub',
+      bg: 'bg-gray-800 hover:bg-gray-900 text-white transition-colors cursor-pointer my-6'
     }
   }
   

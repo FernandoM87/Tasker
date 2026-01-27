@@ -1,6 +1,6 @@
 'use client'
 
-import { ListWithCards } from '@/types'
+import { ListWithCards } from '@/actions/types'
 import { Card } from './Card'
 import { AddCardButton } from './AddCardButton'
 import { FiMoreHorizontal, FiTrash2 } from 'react-icons/fi'
@@ -41,7 +41,7 @@ export function List({ list }: ListProps) {
     }
 
     return (
-        <div className='bg-gray-100 rounded-lg w-72 flex-shrink-0 flex flex-col max-h-full'>
+        <div className='bg-white/20 rounded-lg w-72 min-w-[18rem] flex-shrink-0 flex flex-col h-fit max-h-full'>
             {/* List´s header */}
             <div className='p-3 flex items-center justify-between'>
                 {isEditing ? (
@@ -57,13 +57,13 @@ export function List({ list }: ListProps) {
                               setIsEditing(false)
                           }
                       }}
-                      className='font-semibold text-sm bg-white border-2 border-blue-500 rounded px-2 py-1 w-full focus:outline-none'
+                      className='font-semibold text-lg bg-white border-2 border-blue-500 rounded px-2 py-1 w-full focus:outline-none'
                       autoFocus
                     />
                 ): (
                     <h3
                     onClick={() => setIsEditing(true)}
-                    className='font-semibold text-sm text-gray-800 cursor-pointer hover:bg-gray-200 rounded px-2 py-1 flex-1'
+                    className='font-semibold text-xl text-white cursor-pointer hover:bg-white/20 rounded px-2 py-1 flex-1'
                     >
                         {list.title}
                     </h3>
@@ -72,7 +72,7 @@ export function List({ list }: ListProps) {
                 <div className='relative'>
                     <button
                       onClick={() => setShowMenu(!showMenu)}
-                      className='p-1 hover:bg-gray-200 rounded'
+                      className='p-1 hover:bg-white/20 rounded'
                     >
                         <FiMoreHorizontal size={16}/>
                     </button>

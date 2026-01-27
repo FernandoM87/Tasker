@@ -30,14 +30,14 @@ export function AddListButton({ boardId, order }: AddListButtonProps) {
             router.refresh()
         }
 
-        setIsLoading(fasle)
+        setIsLoading(false)
     }
 
     if(!isAdding) {
         return (
             <button
               onClick={() => setIsAdding(true)}
-              className='bg-white/20 hover:bg-white/30 rounded-lg p-3 w-72 flex-shrink-0 flex items-center gap-2 text-white font-medium transition-colors'>
+              className='bg-white/20 hover:bg-white/30 rounded-lg p-3 w-72 flex-shrink-0 flex items-center h-fit gap-2 text-white font-medium transition-colors'>
                 <FiPlus />
                 Add List
               </button>

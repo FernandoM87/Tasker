@@ -22,10 +22,30 @@ export type UpdateBoardInput = {
     imageUrl?: string
 }
 
+export type CreateListInput = {
+    title: string 
+    boardId: string
+    order: number
+}
+
+export type UpdateListInput = {
+    id: string
+    title?: string
+    order?: number
+}
+
 export type CreateCardInput = {
     title: string
     listId: string
     order: number
+}
+
+export type UpdateCardInput = {
+    id: string
+    title?: string
+    description?: string
+    order?: number
+    listId?: string
 }
 
 export type ActionResponse<T = void> = {

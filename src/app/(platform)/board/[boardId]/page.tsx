@@ -14,26 +14,30 @@ interface BoardPageProps {
 export default async function BoardPage({ params }: BoardPageProps) {
     const session = await getServerSession(authOptions)
 
-    if(!session) {
+    if (!session) {
         redirect('/login')
     }
 
     //Obtain the board with list and cards
     const result = await getBoardById(params.boardId)
 
-    if(!result.success || !result.data) {
+    if (!result.success || !result.data) {
         redirect('/dashboard')
     }
 
     const board = result.data
 
     return (
-        <div className='h-full flex flex-col'>
-            {/* Board´s Header */}
-            <BoardHeader board = {board}/>
-
-            {/* list´s container */}
-            <ListContainer board={board}/>
+        <div
+            className="h-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500"
+            style={{
+                backgroundImage: board.imageUrl ? `url(${board.imageUrl})` : undefined,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+            }}
+        >
+            <BoardHeader board={board} />
+            <ListContainer board={board} />
         </div>
     )
 }

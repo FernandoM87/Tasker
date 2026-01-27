@@ -1,6 +1,6 @@
 'use client'
 
-import { BoardWithLists } from '@/types'
+import { BoardWithLists } from '@/actions/types'
 import { List } from './List'
 import { AddListButton } from './AddListButton'
 

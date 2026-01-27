@@ -36,7 +36,7 @@ export function AddCardButton ({ listId, order }: AddCardButtonProps){
         return (
             <button
               onClick={() => setIsAdding(true)}
-              className='w-full p-2 text-left text-sm text-gray-600 hover:bg-gray-200 rounded flex items-center gap-2 transition-colors'
+              className='w-full p-2 text-left text-sm text-white hover:bg-white/20 rounded flex items-center gap-2 transition-colors'
             >
                 <FiPlus size={16} />
             </button>

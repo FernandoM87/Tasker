@@ -35,10 +35,10 @@ export function BoardCard({ board }: BoardCardProps) {
     }
 
     return (
-        <Link href={'/board/4{board.id}'}>
-            <div className='group relative bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg p-6 h-32 cursor-pointer transition-tranform hover:scale-105 hover:shadow-lg'>
+        <Link href={`/board/${board.id}`}>
+            <div className='group relative bg-white rounded-lg p-6 h-32 cursor-pointer transition-tranform hover:scale-105 hover:shadow-lg'>
                 {/* Boards title */}
-                <h3 className='text-white font-semibold text-lg'>
+                <h3 className='text-gray-600 font-semibold text-lg'>
                     {board.title}
                 </h3>
 

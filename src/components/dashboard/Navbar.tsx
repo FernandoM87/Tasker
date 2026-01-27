@@ -7,10 +7,10 @@ export function Navbar() {
   const { data: session } = useSession()
   
   return (
-    <header className="bg-white border-b border-gray-200 px-6 py-4">
+    <header className="bg-white/20 px-6 py-4">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-xl font-semibold text-gray-800">
+          <h1 className="text-2xl font-semibold text-gray-800">
             Dashboard
           </h1>
         </div>
@@ -33,9 +33,9 @@ export function Navbar() {
           
           <button
             onClick={() => signOut({ callbackUrl: '/login' })}
-            className="px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+            className="px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-200 rounded-lg transition-colors cursor-pointer"
           >
-            Cerrar sesión
+            Log out
           </button>
         </div>
       </div>
